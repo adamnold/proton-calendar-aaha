@@ -1,0 +1,42 @@
+{
+  "name": "proton-calendar",
+  "productName": "Proton Calendar",
+  "version": "1.0.0",
+  "description": "Proton Calendar desktop app (Electron wrapper) by Adam And His Agents",
+  "main": "src/main.js",
+  "author": "Adam And His Agents (AAHA)",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.adamandhisagents.protoncalendar",
+    "productName": "Proton Calendar",
+    "asar": true,
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+        "dir",
+        "AppImage"
+      ],
+      "category": "Office",
+      "icon": "icons",
+      "executableName": "proton-calendar",
+      "artifactName": "proton-calendar-aaha-${version}-${arch}.AppImage",
+      "desktop": {
+        "Name": "Proton Calendar",
+        "Comment": "End-to-end encrypted calendar by Proton",
+        "Categories": "Office;Calendar;",
+        "StartupWMClass": "Proton Calendar"
+      }
+    }
+  }
+}
