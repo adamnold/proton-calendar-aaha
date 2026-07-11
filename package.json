@@ -1,42 +1,24 @@
 {
-  "name": "proton-calendar",
-  "productName": "Proton Calendar",
-  "version": "1.0.0",
-  "description": "Proton Calendar desktop app (Electron wrapper) by Adam And His Agents",
-  "main": "src/main.js",
-  "author": "Adam And His Agents (AAHA)",
-  "license": "Apache-2.0",
+  "name": "proton-calendar-aaha", "productName": "Proton Calendar", "desktopName": "com.adamandhisagents.protoncalendar", "version": "1.1.0",
+  "description": "Unofficial Proton Calendar desktop application for Linux by Adam And His Agents",
+  "main": "src/main.js", "author": "Adam And His Agents (AAHA)", "license": "Apache-2.0",
   "scripts": {
-    "start": "electron .",
-    "dist": "electron-builder --linux"
+    "start": "electron .", "check": "node --check src/main.js && node --check src/policy.js && node --check app.config.js && node scripts/validate-config.js",
+    "test": "node --test", "icons": "bash scripts/generate-icons.sh", "dist": "electron-builder --linux"
   },
-  "devDependencies": {
-    "electron": "^31.0.0",
-    "electron-builder": "^24.13.3"
-  },
+  "devDependencies": { "electron": "43.1.0", "electron-builder": "26.15.3" },
   "build": {
-    "appId": "com.adamandhisagents.protoncalendar",
-    "productName": "Proton Calendar",
-    "asar": true,
-    "files": [
-      "src/**/*",
-      "package.json"
-    ],
+    "appId": "com.adamandhisagents.protoncalendar", "productName": "Proton Calendar", "asar": true,
+    "files": ["src/**/*", "app.config.js", "build/icons/**/*", "package.json"],
     "linux": {
-      "target": [
-        "dir",
-        "AppImage"
-      ],
-      "category": "Office",
-      "icon": "icons",
-      "executableName": "proton-calendar",
-      "artifactName": "proton-calendar-aaha-${version}-${arch}.AppImage",
-      "desktop": {
-        "Name": "Proton Calendar",
-        "Comment": "End-to-end encrypted calendar by Proton",
-        "Categories": "Office;Calendar;",
-        "StartupWMClass": "Proton Calendar"
-      }
+      "target": ["dir", "AppImage"], "category": "Office", "icon": "build/icons",
+      "executableName": "proton-calendar-aaha",
+      "artifactName": "proton-calendar-aaha-v${version}-${arch}.AppImage", "syncDesktopName": true,
+      "desktop": { "entry": {
+        "Name": "Proton Calendar", "Comment": "Private calendar by Proton",
+        "Categories": "Office;Calendar;", "Keywords": "calendar;events;proton;",
+        "StartupWMClass": "com.adamandhisagents.protoncalendar", "Terminal": false, "Type": "Application"
+      }}
     }
   }
 }

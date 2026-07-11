@@ -1,42 +1,14 @@
-// ============================================================
-//  APP CONFIG  —  This is the ONLY file you edit per app.
-//  Change these values, swap the icon in icons/, rebuild.
-// ============================================================
+"use strict";
 module.exports = {
-  // The web app you want to wrap:
-  url: "https://calendar.proton.me",
-
-  // Display name (shows in title bar, launcher, panel tooltip):
-  name: "Proton Calendar",
-
-  // Wayland/X11 window identity. MUST match productName in package.json
-  // and StartupWMClass in the .desktop file so KDE keeps your icon.
-  wmClass: "Proton Calendar",
-
-  // Reverse-DNS app id — unique per app.
-  appId: "com.adamandhisagents.protoncalendar",
-
-  // Initial window size:
-  width: 1280,
-  height: 800,
-
-  // Open external links (e.g. links that leave the app's domain)
-  // in your real browser instead of inside the app window:
-  openExternalInBrowser: true,
-
-  // STRICT: only calendar.proton.me stays in-app. Sign-in flows through
-  // account.proton.me and clicking a mail invite link should bounce to
-  // your real browser (or the Proton Mail app if you have it installed),
-  // NOT open Mail inside this Calendar window. If you'd rather keep the
-  // full Proton experience in one window, set this to ["proton.me"].
-  allowedHosts: ["calendar.proton.me", "account.proton.me"],
-
-  // Optional custom user-agent. Leave null for Electron's default.
-  userAgent: null,
-
-  // PRIVACY HARDENING (default: ON). Disables Chromium's background
-  // networking, domain-reliability beacons, component updates, network-time
-  // queries, translate, optimization hints, and crash metrics, so the app
-  // only talks to Proton. Set to true only if something breaks.
-  disableHardening: false
+  schemaVersion: 2, configured: true,
+  repoName: "proton-calendar-aaha", productName: "Proton Calendar",
+  appId: "com.adamandhisagents.protoncalendar", executable: "proton-calendar-aaha",
+  iconName: "proton-calendar-aaha", profileName: "Proton Calendar",
+  legacyProfileNames: [], compatibilityDesktopIds: ["proton-calendar"],
+  url: "https://calendar.proton.me", trustedNavigationHosts: ["proton.me"], trustedAuthHosts: [],
+  permissions: { notifications: ["calendar.proton.me"], "clipboard-sanitized-write": ["proton.me"] },
+  blockedHosts: ["clients2.google.com", "clients4.google.com", "update.googleapis.com", "safebrowsing.googleapis.com", "optimizationguide-pa.googleapis.com", "redirector.gvt1.com", "google-analytics.com", "www.google-analytics.com", "stats.g.doubleclick.net"],
+  externalProtocols: ["http:", "https:", "mailto:"], openExternalLinks: true,
+  width: 1360, height: 860, category: "Office;Calendar;",
+  comment: "Private calendar by Proton", keywords: "calendar;events;proton;"
 };
