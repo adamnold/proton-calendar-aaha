@@ -1,5 +1,7 @@
 # Proton Calendar for Linux — AAHA
 
+Last Updated: 2026-07-23
+
 Unofficial Proton Calendar Electron desktop app for Fedora KDE with a stable Wayland taskbar icon.
 
 ## Privacy notice
