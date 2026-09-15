@@ -1,6 +1,10 @@
 # Changelog
 
-Last Updated: 2026-07-23
+Last Updated: 2026-09-15
+
+## v1.3.0 — 2026-09-15
+
+- Updated to exact Electron 44.3.0 and refreshed the locked dependency tree.
 
 ## v1.2.0 — 2026-07-23
 
